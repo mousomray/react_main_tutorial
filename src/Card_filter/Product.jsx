@@ -9,25 +9,26 @@ const Product = () => {
     const [visibleCards, setVisibleCards] = useState(6);
     const [selectedCategory, setSelectedCategory] = useState(null);
 
+    const fetchData = async () => {
+        try {
+            const apiurl = 'https://dummyjson.com/products?skip=0&limit=100'
+            const productsResponse = await axios.get(apiurl);
+            setMyProducts(productsResponse.data);
+            setLoading(false);
+        } catch (error) {
+            console.error('Error fetching products data:', error);
+            setLoading(false);
+        }
+
+        try {
+            const categoriesResponse = await axios.get('https://dummyjson.com/products/categories');
+            setCategories(categoriesResponse.data);
+        } catch (error) {
+            console.error('Error fetching categories data:', error);
+        }
+    };
+
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const productsResponse = await axios.get('https://dummyjson.com/products');
-                setMyProducts(productsResponse.data);
-                setLoading(false);
-            } catch (error) {
-                console.error('Error fetching products data:', error);
-                setLoading(false);
-            }
-
-            try {
-                const categoriesResponse = await axios.get('https://dummyjson.com/products/categories');
-                setCategories(categoriesResponse.data);
-            } catch (error) {
-                console.error('Error fetching categories data:', error);
-            }
-        };
-
         fetchData();
     }, []);
 
@@ -50,7 +51,7 @@ const Product = () => {
     return (
         <div className="container mt-5">
             <div className="row">
-                <div className="col-md-3 mt-5" style={{ border: '2px solid black',borderRadius:'30px',height:'1100px'}}>
+                <div className="col-md-3 mt-5" style={{ border: '2px solid black', borderRadius: '30px', height: '1100px' }}>
                     <div>
                         <h1 style={{ marginBottom: '30px' }}>Categories</h1>
                         <ul>

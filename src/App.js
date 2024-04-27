@@ -50,9 +50,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import Nav from './Webskitters_API_project/Nav'
 // import Blog from './Webskitters_API_project/Blog'
 // import Readmore from './Webskitters_API_project/Readmore'
-// import Nav from './Card_filter/Nav'
-// import Product from './Card_filter/Product'
-// import Productdetails from './Card_filter/Productdetails'
+import Nav from './Card_filter/Nav'
+import Product from './Card_filter/Product'
+import Productdetails from './Card_filter/Productdetails'
 // import Counter from './Usereducerhook/Counter'
 // import Loading from './Loading/Loading';
 // import Postrawdata from './Handle_post_data/Postrawdata';
@@ -69,7 +69,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import Memoparent from './Memo_Callback/Memoparent'
 // import Callbackparent from './Memo_Callback/Callbackparent'
 // import Reacthookformparent from './React_Hook_Form/Reacthookformparent';
-import Routequery from './React_Query/Routequery';
+// import Routequery from './React_Query/Routequery';
 
 function App() {
   return (
@@ -186,13 +186,13 @@ function App() {
 
 
       {/* Card Filter */}
-      {/* <Router>
+      <Router>
         <Nav />
         <Routes>
           <Route path='/' element={<Product />} />
           <Route path='/productdetails/:id' element={<Productdetails />} />
         </Routes>
-      </Router> */}
+      </Router>
 
       {/* Use Reducer Hook */}
       {/* <Counter/> */}
@@ -245,7 +245,7 @@ function App() {
       {/* <Reacthookformparent/> */}
 
       {/*React Query*/}
-      <Routequery />
+      {/*<Routequery />*/}
 
 
 
