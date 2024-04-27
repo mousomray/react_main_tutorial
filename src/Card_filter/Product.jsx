@@ -3,26 +3,30 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 const Product = () => {
-    const [myProducts, setMyProducts] = useState([]);
+    const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
     const [loading, setLoading] = useState(true);
     const [visibleCards, setVisibleCards] = useState(6);
-    const [selectedCategory, setSelectedCategory] = useState(null);
+    const [selectedCategory, setSelectedCategory] = useState('');
 
     const fetchData = async () => {
+
+        // Fetch Product area 
         try {
             const apiurl = 'https://dummyjson.com/products?skip=0&limit=100'
-            const productsResponse = await axios.get(apiurl);
-            setMyProducts(productsResponse.data);
+            const response = await axios.get(apiurl);
+            setProducts(response.data.products);
             setLoading(false);
         } catch (error) {
             console.error('Error fetching products data:', error);
             setLoading(false);
         }
 
+        // Fetch Category area
         try {
-            const categoriesResponse = await axios.get('https://dummyjson.com/products/categories');
-            setCategories(categoriesResponse.data);
+            const apiurl = 'https://dummyjson.com/products/categories'
+            const response = await axios.get(apiurl);
+            setCategories(response.data);
         } catch (error) {
             console.error('Error fetching categories data:', error);
         }
@@ -36,13 +40,20 @@ const Product = () => {
         setVisibleCards(prevVisibleCards => prevVisibleCards + 6);
     };
 
-    const handleCategoryClick = (category) => {
-        setSelectedCategory(category === selectedCategory ? null : category);
+    // Handle for category click
+    const handleCategoryClick = (categoryId) => {
+        setSelectedCategory(categoryId);
     };
 
+    // Handle for all category
+    const handleShowAll = () => {
+        setSelectedCategory('');
+    }
+
+    // Filter Product
     const filteredProducts = selectedCategory
-        ? myProducts.products.filter(product => product.category === selectedCategory)
-        : myProducts.products;
+        ? products.filter(item => item.category === selectedCategory)
+        : products;
 
     if (loading) {
         return <h1 style={{ fontSize: '100px', color: 'red', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>Loading....</h1>;
@@ -56,14 +67,14 @@ const Product = () => {
                         <h1 style={{ marginBottom: '30px' }}>Categories</h1>
                         <ul>
                             <li style={{ marginBottom: '10px' }}>
-                                <button className="btn btn-danger" onClick={() => handleCategoryClick(null)}>
+                                <button className="btn btn-danger" onClick={handleShowAll}>
                                     <b>All</b>
                                 </button>
                             </li>
-                            {categories.map((category, index) => (
+                            {categories.map((value,index) => (
                                 <li key={index} style={{ marginBottom: '10px' }}>
-                                    <button className="btn btn-danger" onClick={() => handleCategoryClick(category)}>
-                                        <b>{category}</b>
+                                    <button className="btn btn-danger" onClick={() => handleCategoryClick(value)}>
+                                        <b>{value}</b>
                                     </button>
                                 </li>
                             ))}
