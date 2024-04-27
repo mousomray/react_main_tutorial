@@ -74,6 +74,7 @@ const Product = () => {
                             {categories.map((value,index) => (
                                 <li key={index} style={{ marginBottom: '10px' }}>
                                     <button className="btn btn-danger" onClick={() => handleCategoryClick(value)}>
+                                    {/*In this API id is not present so I am not put value.id in handleCategory Click*/}
                                         <b>{value}</b>
                                     </button>
                                 </li>
