@@ -3,11 +3,11 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 const Product = () => {
-    const [products, setProducts] = useState([]);
-    const [categories, setCategories] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [visibleCards, setVisibleCards] = useState(6);
-    const [selectedCategory, setSelectedCategory] = useState('');
+    const [products, setProducts] = useState([]); // For to fetch Products
+    const [categories, setCategories] = useState([]); // For to fetch categories
+    const [loading, setLoading] = useState(true); // For to make loading  
+    const [visibleCards, setVisibleCards] = useState(6); // For Loadmore button 
+    const [selectedCategory, setSelectedCategory] = useState(''); // For selected category 
 
     const fetchData = async () => {
 
