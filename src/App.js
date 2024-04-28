@@ -68,7 +68,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import Routing from './Private_Routing/Routing';
 // import Memoparent from './Memo_Callback/Memoparent'
 // import Callbackparent from './Memo_Callback/Callbackparent'
-// import Reacthookformparent from './React_Hook_Form/Reacthookformparent';
+//  import Reacthookformparent from './React_Hook_Form/Reacthookformparent';
 // import Routequery from './React_Query/Routequery';
 
 function App() {
@@ -245,7 +245,7 @@ function App() {
       {/* <Reacthookformparent/> */}
 
       {/*React Query*/}
-      {/*<Routequery />*/}
+      {/* <Routequery /> */}
 
 
 

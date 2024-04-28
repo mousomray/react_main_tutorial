@@ -1,5 +1,5 @@
 import React from 'react'
-import { useQuery } from '@tanstack/react-query'
+import { useQuery } from '@tanstack/react-query' // Import for useQuery 
 import axios from 'axios'
 
 const User = () => {
@@ -8,12 +8,13 @@ const User = () => {
 
         const userapiurl = 'https://tureappservar.onrender.com/alluser'
         const response = await axios.get(userapiurl)
-        return response?.data?.data
+        console.log("Fetching User data",response);
+        return response?.data?.data // You have to put return because there is no state
     }
 
     const { isLoading, isError, data, error } = useQuery({
-        queryKey: ['user'],
-        queryFn: getUserdata
+        queryKey: ['user'], // You can write any name in the place of user 
+        queryFn: getUserdata // This line of code work as same as useEffect()
     })
 
     // For Loading 
