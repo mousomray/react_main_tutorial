@@ -47,12 +47,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import Nav from './News_app/Nav'
 // import Home from './News_app/Home'
 // import Trending from './News_app/Trending'
-// import Nav from './Webskitters_API_project/Nav'
-// import Blog from './Webskitters_API_project/Blog'
-// import Readmore from './Webskitters_API_project/Readmore'
-import Nav from './Card_filter/Nav'
-import Product from './Card_filter/Product'
-import Productdetails from './Card_filter/Productdetails'
+// import Nav from './Useparams_project/Nav'
+// import Blog from './Useparams_project/Blog'
+// import Readmore from './Useparams_project/Readmore'
+// import Nav from './Card_filter/Nav'
+// import Product from './Card_filter/Product'
+// import Productdetails from './Card_filter/Productdetails'
 // import Counter from './Usereducerhook/Counter'
 // import Loading from './Loading/Loading';
 // import Postrawdata from './Handle_post_data/Postrawdata';
@@ -169,7 +169,7 @@ function App() {
 
 
 
-      {/* Webskitters API project */}
+      {/* Use Params Blog Project with Webskitters API */}
       {/* <Router>
         <Nav />
         <Routes>
@@ -186,13 +186,13 @@ function App() {
 
 
       {/* Card Filter */}
-      <Router>
+      {/* <Router>
         <Nav />
         <Routes>
           <Route path='/' element={<Product />} />
           <Route path='/productdetails/:id' element={<Productdetails />} />
         </Routes>
-      </Router>
+      </Router> */}
 
       {/* Use Reducer Hook */}
       {/* <Counter/> */}
