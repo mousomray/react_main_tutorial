@@ -8,7 +8,7 @@ const User = () => {
 
         const userapiurl = 'https://tureappservar.onrender.com/alluser'
         const response = await axios.get(userapiurl)
-        console.log("Fetching User data",response);
+        console.log("Fetching User data", response);
         return response?.data?.data // You have to put return because there is no state
     }
 
@@ -23,7 +23,7 @@ const User = () => {
     }
 
     // For Error
-    if(isError){
+    if (isError) {
         return <h1>{error.message}</h1>
     }
 
