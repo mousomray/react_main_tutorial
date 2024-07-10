@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import Changeobject from './State_assignment/Changeobject';
 // import Arrayobjectstate from './State_assignment/Arrayobjectstate';
 // import UpdateArray from './State_assignment/Updatearrayobject';
+// import Dropdowncountry from './State_assignment/Dropdowncountry';
+// import Memorycardgame from './State_assignment/Memorycardgame';
 // import Counter from './Useeffecthook/Counter';
 // import FetchAPI from './Useeffecthook/FetchAPI';
 // import AxiosAPI from './Useeffecthook/AxiosAPI';
@@ -115,7 +117,11 @@ function App() {
       <TodoList/>
       <Temperature/>
       <Stopwatch/>
-      <WeightConverter/> */}
+      <WeightConverter/> 
+      <Dropdowncountry/>
+      <Memorycardgame/>*/}
+      
+      
 
       {/* <Toggle/>
       <Changeobject/>
