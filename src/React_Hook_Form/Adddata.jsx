@@ -6,10 +6,10 @@ import { useForm } from 'react-hook-form'; // Import useForm hook
 
 const Adddata = () => {
 
-    const { register, handleSubmit, watch, formState: { errors } } = useForm(); // Define in State
-    const[loading, setLoading] = useState(false)
+    const { register, handleSubmit, watch, formState: { errors }, reset } = useForm(); // Define in State
+    const [loading, setLoading] = useState(false)
 
-    const handleOnSubmit = async (data) => {
+    const onSubmit = async (data) => {
 
         setLoading(true)
 
@@ -20,15 +20,16 @@ const Adddata = () => {
             city: data.city,
         };
 
-        const apiUrl = "https://tureappservar.onrender.com/user"
+        const apiurl = "https://tureappservar.onrender.com/user"
 
         try {
-            const response = await axios.post(apiUrl, reg, data)
-            console.log(response);
+            const response = await axios.post(apiurl, reg)
+            console.log("Fetchin user data...", response)
             toast.success(response?.data?.message)
             setLoading(false)
+            reset()
         } catch (error) {
-            console.log(error);
+            console.log("Error...", error)
             toast.error(error?.response?.data?.message)
             setLoading(false)
         }
@@ -44,17 +45,19 @@ const Adddata = () => {
                         SignUp Form React Hook Form
                     </div>
                     <div className="card-body">
-                        <form onSubmit={handleSubmit(handleOnSubmit)}>
+                        <form onSubmit={handleSubmit(onSubmit)}>
                             <div className="form-group">
                                 <label for="exampleInputEmail1">Name</label>
                                 <input type="text" className="form-control"
                                     {...register("name", {
-                                        required: true,
-                                        minLength:3
+                                        required: "This Field is Required",
+                                        minLength: {
+                                            value: 3,
+                                            message: "Name Should be atleast 3 character"
+                                        }
                                     })}
                                 />
-                                {errors?.name?.type === "required" && <p style={{ color: 'red' }}>This field is required</p>}
-                                {errors?.name?.type === "minLength" && <p style={{ color: 'red' }}>Name must be atleast three characters</p>}
+                                {errors?.name && <p style={{ color: 'red' }}>{errors?.name?.message}</p>}
                             </div>
 
                             <div className="form-group">
@@ -80,48 +83,31 @@ const Adddata = () => {
                                     type="number"
                                     className="form-control"
                                     {...register("phone", {
-                                        required: true,
-                                        minLength: 10,
-                                        maxLength: 10,
+                                        required: "This Field is Required",
+                                        minLength: {
+                                            value: 10,
+                                            message: "Phone Should be atleast 10 characters"
+                                        },
+                                        maxLength: {
+                                            value: 10,
+                                            message: "Phone Should be atleast 10 characters"
+                                        }
                                     })}
                                 />
-                                {errors?.phone?.type === "required" && (
-                                    <p style={{ color: 'red' }}>This field is required</p>
-                                )}
-                                {errors?.phone?.type === "minLength" && (
-                                    <p style={{ color: 'red' }}>Phone number must be exactly 10 characters</p>
-                                )}
-                                {errors?.phone?.type === "maxLength" && (
-                                    <p style={{ color: 'red' }}>Phone number must be exactly 10 characters</p>
-                                )}
+                                {errors?.phone && <p style={{ color: 'red' }}>{errors?.phone?.message}</p>}
                             </div>
+
                             <div className="form-group">
                                 <label for="exampleInputEmail1">city</label>
                                 <input type="text" className="form-control"
                                     {...register("city", {
-                                        required: true,
+                                        required: "This Field is Required"
                                     })}
                                 />
-                                {errors?.city?.type === "required" && <p style={{ color: 'red' }}>This field is required</p>}
-
+                                {errors?.city && <p style={{ color: 'red' }}>{errors?.city?.message}</p>}
                             </div>
-                            {/* <div className="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" className="form-control"
-                                    name='password'
-                                    {...register("password", {
-                                        required: true,
-                                        maxLength: 10,
-                                    })}
-                                />
-                                {errors?.password?.type === "required" && <p>This field is required</p>}
-                                {errors?.password?.type === "maxLength" && (
-                                    <p>First phone cannot exceed 10 characters</p>
-                                )}
-                            </div> */}
-
                             <button type="submit" className="btn btn-primary">
-                                {loading?'Loading...':'Submit'}
+                                {loading ? 'Loading...' : 'Submit'}
                             </button>
                         </form>
 
