@@ -1,10 +1,11 @@
-let ami = () =>{
-    return(
-        <>
-        <h1>
-            I am Mousom. This is 
-        </h1>
-        </>
-    )
+import React from 'react'
+
+const ami = () => {
+  return (
+    <>
+      <h1>This Is Ami Component</h1>
+    </>
+  )
 }
- 
+
+export default ami

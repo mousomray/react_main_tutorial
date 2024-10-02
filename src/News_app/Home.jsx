@@ -38,7 +38,7 @@ const Home = () => {
         <div className="container bg-white">
             <h1 className="text-center mb-5 mt-5"></h1>
             <div className="row">
-                {news.slice(0, visibleCards).map((value, index) => {
+                {news?.slice(0, visibleCards).map((value, index) => {
                     return (
                         <div className="col-md-4 mb-4" key={index}>
                             <div className="card h-100">

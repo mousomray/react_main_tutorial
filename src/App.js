@@ -1,73 +1,65 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import Toggle from './State_assignment/Toggle';
-// import Changeobject from './State_assignment/Changeobject';
-// import Arrayobjectstate from './State_assignment/Arrayobjectstate';
-// import UpdateArray from './State_assignment/Updatearrayobject';
-// import Dropdowncountry from './State_assignment/Dropdowncountry';
-// import Memorycardgame from './State_assignment/Memorycardgame';
+
+
 // import Counter from './Useeffecthook/Counter';
 // import FetchAPI from './Useeffecthook/FetchAPI';
 // import AxiosAPI from './Useeffecthook/AxiosAPI';
+// import Axios_Nested_API from './Useeffecthook/Axios_Nested_API';
+
 //import Inlinecss from './Add_css/Inlinecss';
 //import Internalcss from './Add_css/Internalcss';
 //import Myimage from './Add_image/Myimage';
 //import './App.css';
-//import Parent from './component_assignment/Parent';
 //import External from './Add_css/External';
-// import Axios_Nested_API from './Useeffecthook/Axios_Nested_API';
+
+//import Parent from './component_assignment/Parent';
+
+
 // import Search from './Searchbar/Search';
+
 // import Feature from './Use_Params/Feature';
 // import Nav from './Use_Params/Nav';
 // import Error from './Use_Params/Error';
-// import Home from './Router/Home';
-// import About from './Router/About';
-// import Service from './Router/Service';
+
+// import Parentrouter from './Router/Parentrouter';
+
 // import Stringparent from './Props/Stringparent';
 // import Numberparent from './Props/Numberparent';
+
 // import Arrayobjectparent from './Props/Arrayobjectparent';
 // import PP from './Props/PP';
-// import State from './Usestatehook/State';
-// import Counter from './Usestatehook/Counter';
-// import Changecolor from './Usestatehook/Changecolor';
-// import TodoList from './State_assignment/Todolist';
-// import Temperature from './State_assignment/Temperature';
-// import Stopwatch from './State_assignment/Stopwatch';
-// import WeightConverter from './State_assignment/Weightconverter';
-// import Nav from './FetchApi_and_Params_project/Nav';
-// import Home from './FetchApi_and_Params_project/Home';
-// import Product from './FetchApi_and_Params_project/Product';
-// import Productdetails from './FetchApi_and_Params_project/Productdetails';
-// import Nav from './FetchApi_and_Props_project/Nav';
-// import Home from './FetchApi_and_Props_project/Home';
-// import User from './FetchApi_and_Props_project/User';
-// import Details from './FetchApi_and_Props_project/Details';
-// import Nav from './Readmore_params/Nav'
-// import Home from './Readmore_params/Home'
-// import Post from './Readmore_params/Post'
-// import Readmore from './Readmore_params/Readmore'
-// import Nav from './News_app/Nav'
-// import Home from './News_app/Home'
-// import Trending from './News_app/Trending'
-// import Nav from './Useparams_project/Nav'
-// import Blog from './Useparams_project/Blog'
-// import Readmore from './Useparams_project/Readmore'
-// import Nav from './Card_filter/Nav'
-// import Product from './Card_filter/Product'
-// import Productdetails from './Card_filter/Productdetails'
+
+// import Stateparent from './Usestatehook/Stateparent';
+
+// import Stateasignmentparent from './State_assignment/Stateasignmentparent';
+
+// import Fetchapiparams from './FetchApi_and_Params_project/Fetchapiparams';
+// import Fetchapiprops from './FetchApi_and_Props_project/Fetchapiprops';
+
+// import Readmoreparent from './Readmore_params/Readmoreparent';
+
+// import Newsparent from './News_app/Newsparent';
+
+// import Blogparent from './Blog_project/Blogparent';
+
+// import Cardfilter from './Card_filter/Cardfilter';
+
 // import Counter from './Usereducerhook/Counter'
+
 // import Loading from './Loading/Loading';
+
 // import Postrawdata from './Handle_post_data/Postrawdata';
 //  import Postformdata from './Handle_post_data/Postformdata';
-// import Nav from './NestedArrayAPI/Nav'
-// import Cards from './NestedArrayAPI/Cards'
-// import Details from './NestedArrayAPI/Details'
-// import Getcontext from './Context/Getcontext';
-// import Nav from './Context/Nav'
-// import User from './Context/User';
-// import Student from './Context/Student';
-// import Context from './Usecontext_multiple_api/Context';
+
+// import Nestedparent from './NestedArrayAPI/Nestedparent';
+
+// import Parentcontext from './Context/Parentcontext';
+
+// import Context from './ContextAPI/Context';
+
 // import Routing from './Private_Routing/Routing';
+
 // import Memoparent from './Memo_Callback/Memoparent'
 // import Callbackparent from './Memo_Callback/Callbackparent'
 // import Usememo from './Memo_Callback/Usememo';
@@ -83,15 +75,8 @@ function App() {
       {/*<Internalcss/>*/}
       {/*<Inlinecss/>*/}
 
-      {/* <Router> */}
-      {/* Put Nav always this area */}
-      {/* <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/service' element={<Service />} />
-        </Routes> */}
-      {/* Put Footer always this area */}
-      {/* </Router> */}
+      {/*React Routing*/}
+      {/* <Parentrouter /> */}
 
 
       {/* <Stringparent/>
@@ -111,95 +96,49 @@ function App() {
       </Router> */}
 
 
-      {/* <State />
-      <Counter />
-      <Changecolor />
-      <TodoList/>
-      <Temperature/>
-      <Stopwatch/>
-      <WeightConverter/> 
-      <Dropdowncountry/>
-      <Memorycardgame/>*/}
+      {/*Use State normal*/}
+      {/* <Stateparent /> */}
 
 
+      {/* React Assignment General For Interview*/}
+      {/* <Stateasignmentparent/> */}
 
-      {/* <Toggle/>
-      <Changeobject/>
-      <Arrayobjectstate/>
-      <UpdateArray/> */}
 
-      {/*<Counter/>
-      <FetchAPI/>*/}
+      {/*useEffect() activity*/}
+      {/* <Counter/>
+      <FetchAPI/>
+      <Axios_Nested_API/>
+      <AxiosAPI/> */}
 
 
       {/* FetchApi_and_Params_project */}
-      {/* <Router>
-     <Nav/>
-      <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/product" element={<Product/>}/>
-        <Route path="/productdetails/:id" element={<Productdetails/>}/>
-      </Routes>
-    </Router> */}
+      {/* <Fetchapiparams/> */}
 
 
       {/* FetchApi_and_Props_project */}
-      {/* <Router>
-        <Nav />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/user' element={<User />} />
-          <Route path="/details/:id" element={<Details />} />
-        </Routes>
-      </Router> */}
+      {/* <Fetchapiprops/> */}
 
 
       {/*Readmore_params*/}
-      {/*<Router>
-       <Nav/>
-        <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/post' element={<Post/>}/>
-          <Route path='/readmore/:id' element={<Readmore/>}/>
-        </Routes>
-      </Router>*/}
+      {/* <Readmoreparent/> */}
 
 
       {/*News App*/}
-      {/* <Router>
-        <Nav />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/trending' element={<Trending />} />
-        </Routes>
-      </Router> */}
+      {/* <Newsparent/> */}
 
 
 
       {/* Use Params Blog Project with Webskitters API */}
-      {/* <Router>
-        <Nav />
-        <Routes>
-          <Route path='/' element={<Blog />} />
-          <Route path='/readmore/:id' element={<Readmore />} />
-        </Routes>
-      </Router> */}
+      {/* <Blogparent/> */}
 
-      {/* <AxiosAPI/> */}
+
 
       {/* <Search/> */}
 
-      {/* <Axios_Nested_API/> */}
 
 
-      {/* Card Filter */}
-      {/* <Router>
-        <Nav />
-        <Routes>
-          <Route path='/' element={<Product />} />
-          <Route path='/productdetails/:id' element={<Productdetails />} />
-        </Routes>
-      </Router> */}
+
+      {/* <Cardfilter /> */}
 
       {/* Use Reducer Hook */}
       {/* <Counter/> */}
@@ -214,33 +153,19 @@ function App() {
 
 
       {/* Handle nested array api */}
-      {/* <Router>
-        <Nav />
-        <Routes>
-          <Route path='/' element={<Cards />} />
-          <Route path='/details/:id1/:id2' element={<Details />} />
-        </Routes>
-      </Router> */}
+      {/* <Nestedparent/> */}
 
 
       {/*UseContex Hook with Single API*/}
-      {/*<Getcontext>
-        <Router>
-          <Nav />
-          <Routes>
-            <Route path='/' element={<User />} />
-            <Route path='/student' element={<Student />} />
-          </Routes>
-        </Router>
-    </Getcontext>*/}
+      {/* <Parentcontext/> */}
 
 
-      {/*Use context with multiple API*/}
+      {/*Context API Handling*/}
       {/* <Context/> */}
 
 
 
-      {/*Private Routing*/}
+      {/*Private Routing Setup*/}
       {/* <Routing/> */}
 
       {/*useMemo and useCallback*/}

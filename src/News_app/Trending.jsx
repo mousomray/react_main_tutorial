@@ -12,6 +12,7 @@ const Trending = () => {
 
         const response = await fetch('https://newsapi.org/v2/top-headlines?country=in&apiKey=f2b86ca3d3ac43d689830404d4545385');
         const data = await response.json();
+        console.log("Fetching trending data...", data);
         setNews(data.articles);
         setLoading(false);
 
@@ -38,7 +39,7 @@ const Trending = () => {
         <div className="container bg-white">
             <h1 className="text-center mb-5 mt-5"></h1>
             <div className="row">
-                {news.slice(0, visibleCards).map((value, index) => {
+                {news?.slice(0, visibleCards).map((value, index) => {
                     return (
                         <div className="col-md-4 mb-4" key={index}>
                             <div className="card h-100">

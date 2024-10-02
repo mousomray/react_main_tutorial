@@ -15,7 +15,7 @@ const Productdetails = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [id]);
 
   if (loading) {
     return <h1 style={{fontSize:'100px',color:'red',display:'flex',justifyContent:'center',alignItems: 'center', height: '100vh'}}>Loading....</h1>;

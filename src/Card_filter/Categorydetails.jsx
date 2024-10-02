@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Category from './Category';
+import { useParams } from 'react-router-dom';
 
-const Product = () => {
+const Categorydetails = () => {
+    const {slug} = useParams();
     const [pro, setProducts] = useState([]); // For to fetch Products
     const [loading, setLoading] = useState(true); // For to make loading  
     const [visibleCards, setVisibleCards] = useState(6); // For Loadmore button 
@@ -12,20 +14,20 @@ const Product = () => {
     const fetchData = async () => {
         // Fetch Product area 
         try {
-            const apiurl = 'https://dummyjson.com/products?skip=0&limit=100'
+            const apiurl = `https://dummyjson.com/products/category/${slug}`
             const response = await axios.get(apiurl);
-            console.log("Fetching Product Data...", response);
+            console.log("Fetching Cat Details Data...", response);
             setProducts(response?.data?.products);
             setLoading(false);
         } catch (error) {
-            console.error('Error fetching products data:', error);
+            console.error('Error Fetching Cat Details data:', error);
             setLoading(false);
         }
     };
 
     useEffect(() => {
         fetchData();
-    }, []);
+    }, [slug]);
 
     const handleLoadMore = () => {
         setVisibleCards(prevVisibleCards => prevVisibleCards + 6);
@@ -73,4 +75,4 @@ const Product = () => {
     );
 };
 
-export default Product;
+export default Categorydetails;

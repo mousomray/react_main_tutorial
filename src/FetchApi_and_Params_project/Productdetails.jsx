@@ -9,7 +9,7 @@ const Productdetails = () => {
   const fetchData = async () => {
     const response = await fetch(`https://dummyjson.com/products/${id}`);
     const responseData = await response.json();
-    setData(responseDataz);
+    setData(responseData);
     setLoading(false);
   };
 
